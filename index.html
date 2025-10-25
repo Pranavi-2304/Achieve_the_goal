@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Adventure Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="menu-screen" class="screen active">
+            <h1>Platform Adventure</h1>
+            <div id="level-map-container">
+                <svg id="level-map" viewBox="0 0 800 1200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Background grass and details -->
+                    <rect width="800" height="1200" fill="#7ec850"/>
+                    
+                    <!-- Zigzag path -->
+                    <path d="M 200 1100 L 600 950 L 200 800 L 600 650 L 200 500 L 600 350 L 200 200 L 600 50" 
+                          stroke="#d4a574" stroke-width="100" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    
+                    <!-- Trees and decorations -->
+                    <rect x="110" y="1030" width="40" height="65" fill="#8b4513"/>
+                    <circle cx="130" cy="1015" r="55" fill="#2d5016"/>
+                    
+                    <rect x="640" y="730" width="35" height="55" fill="#8b4513"/>
+                    <circle cx="657" cy="715" r="48" fill="#2d5016"/>
+                    
+                    <rect x="70" y="560" width="38" height="60" fill="#8b4513"/>
+                    <circle cx="89" cy="545" r="50" fill="#2d5016"/>
+                    
+                    <rect x="690" y="330" width="30" height="45" fill="#8b4513"/>
+                    <circle cx="705" cy="320" r="42" fill="#2d5016"/>
+                    
+                    <ellipse cx="200" cy="850" rx="50" ry="38" fill="#3a6b1f"/>
+                    <ellipse cx="700" cy="530" rx="45" ry="32" fill="#3a6b1f"/>
+                </svg>
+                
+                <!-- Level Buttons with Stars - Zigzag Pattern -->
+                <div class="level-node" style="top: 1050px; left: 130px;" data-level="1">
+                    <button class="level-btn-map" id="level1-btn" data-level="1">
+                        <span class="level-number">1</span>
+                    </button>
+                    <div class="stars-container">
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                    </div>
+                </div>
+                
+                <div class="level-node locked-node" style="top: 900px; right: 130px;" data-level="2">
+                    <button class="level-btn-map locked" id="level2-btn" data-level="2">
+                        <span class="lock-icon">🔒</span>
+                        <span class="level-number">2</span>
+                    </button>
+                    <div class="stars-container">
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                    </div>
+                </div>
+                
+                <div class="level-node locked-node" style="top: 750px; left: 130px;" data-level="3">
+                    <button class="level-btn-map locked" id="level3-btn" data-level="3">
+                        <span class="lock-icon">🔒</span>
+                        <span class="level-number">3</span>
+                    </button>
+                    <div class="stars-container">
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                    </div>
+                </div>
+                
+                <div class="level-node locked-node" style="top: 600px; right: 130px;" data-level="4">
+                    <button class="level-btn-map locked" id="level4-btn" data-level="4">
+                        <span class="lock-icon">🔒</span>
+                        <span class="level-number">4</span>
+                    </button>
+                    <div class="stars-container">
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                    </div>
+                </div>
+                
+                <div class="level-node locked-node" style="top: 450px; left: 130px;" data-level="5">
+                    <button class="level-btn-map locked" id="level5-btn" data-level="5">
+                        <span class="lock-icon">🔒</span>
+                        <span class="level-number">5</span>
+                    </button>
+                    <div class="stars-container">
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                    </div>
+                </div>
+                
+                <div class="level-node locked-node" style="top: 300px; right: 130px;" data-level="6">
+                    <button class="level-btn-map locked" id="level6-btn" data-level="6">
+                        <span class="lock-icon">🔒</span>
+                        <span class="level-number">6</span>
+                    </button>
+                    <div class="stars-container">
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                    </div>
+                </div>
+                
+                <div class="level-node locked-node" style="top: 150px; left: 130px;" data-level="7">
+                    <button class="level-btn-map locked" id="level7-btn" data-level="7">
+                        <span class="lock-icon">🔒</span>
+                        <span class="level-number">7</span>
+                    </button>
+                    <div class="stars-container">
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                    </div>
+                </div>
+                
+                <div class="level-node locked-node" style="top: 10px; right: 130px;" data-level="8">
+                    <button class="level-btn-map locked" id="level8-btn" data-level="8">
+                        <span class="lock-icon">🔒</span>
+                        <span class="level-number">8</span>
+                    </button>
+                    <div class="stars-container">
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                    </div>
+                </div>
+            </div>
+            <div id="progress-info">
+                <p>🎮 8 Levels of Epic Adventure! Complete each to unlock the next! 🎮</p>
+            </div>
+        </div>
+
+        <div id="game-screen" class="screen">
+            <div id="game-ui">
+                <div id="level-info">Level: <span id="current-level">1</span></div>
+                <button id="back-btn">Back to Menu</button>
+            </div>
+            <canvas id="gameCanvas"></canvas>
+        </div>
+
+        <div id="complete-screen" class="screen">
+            <h2>Level Complete!</h2>
+            <p id="complete-message"></p>
+            <div id="complete-buttons">
+                <button id="next-level-btn">Next Level</button>
+                <button id="menu-btn">Main Menu</button>
+            </div>
+        </div>
+
+        <div id="game-over-screen" class="screen">
+            <h2>Game Over!</h2>
+            <p>You fell into the abyss!</p>
+            <button id="retry-btn">Try Again</button>
+            <button id="menu-btn-2">Main Menu</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
